@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Eduardo Peron – Portfólio</title>
+<meta name="description" content="Portfólio de Eduardo Peron, estudante de Engenharia da Computação (UNIVAP) em busca de estágio em desenvolvimento de software.">
+<style>
+  :root {
+    --bg: #f7f8fa;
+    --card: #ffffff;
+    --text: #1b2430;
+    --muted: #5b6676;
+    --line: #e1e5ec;
+    --accent: #2457d6;
+    --accent-soft: #e8eefc;
+    --ok: #17803d;
+    --ok-soft: #e3f4e8;
+    --wip: #9a5b00;
+    --wip-soft: #fdf0d8;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #11151c;
+      --card: #1a2029;
+      --text: #e8ecf2;
+      --muted: #9aa5b5;
+      --line: #2a323f;
+      --accent: #7ea2ff;
+      --accent-soft: #1d2a4a;
+      --ok: #62d68a;
+      --ok-soft: #14301f;
+      --wip: #f0b95a;
+      --wip-soft: #3a2b10;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 0 20px; }
+
+  header.top {
+    position: sticky; top: 0; z-index: 10;
+    background: color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  header.top .wrap { display: flex; align-items: center; justify-content: space-between; height: 56px; }
+  header.top strong { font-size: 1rem; }
+  nav a { margin-left: 18px; font-size: .95rem; color: var(--muted); }
+  nav a:hover { color: var(--accent); text-decoration: none; }
+
+  .hero { padding: 72px 0 40px; }
+  .hero h1 { font-size: clamp(2rem, 5vw, 3rem); line-height: 1.15; margin: 0 0 12px; }
+  .hero p.lead { font-size: 1.15rem; color: var(--muted); max-width: 640px; margin: 0 0 24px; }
+  .btns { display: flex; flex-wrap: wrap; gap: 10px; }
+  .btn {
+    display: inline-block; padding: 10px 18px; border-radius: 8px;
+    border: 1px solid var(--line); background: var(--card); color: var(--text); font-weight: 600;
+  }
+  .btn.primary { background: var(--accent); color: #fff; border-color: var(--accent); }
+  .btn:hover { text-decoration: none; filter: brightness(1.05); }
+
+  section { padding: 40px 0; }
+  section h2 { font-size: 1.5rem; margin: 0 0 20px; }
+  .about p { max-width: 720px; margin: 0 0 12px; }
+  .meta { color: var(--muted); font-size: .95rem; }
+
+  .tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
+  .tags li {
+    background: var(--accent-soft); color: var(--accent);
+    padding: 3px 10px; border-radius: 999px; font-size: .82rem; font-weight: 600;
+  }
+
+  .skills { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+  .skills .box { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 16px 18px; }
+  .skills h3 { margin: 0 0 10px; font-size: 1rem; }
+
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 18px; }
+  .card {
+    background: var(--card); border: 1px solid var(--line); border-radius: 12px;
+    padding: 20px; display: flex; flex-direction: column; gap: 10px;
+  }
+  .card h3 { margin: 0; font-size: 1.1rem; }
+  .card p { margin: 0; color: var(--muted); font-size: .95rem; }
+  .card .foot { margin-top: auto; padding-top: 6px; font-size: .92rem; }
+  .status { align-self: flex-start; font-size: .75rem; font-weight: 700; padding: 2px 10px; border-radius: 999px; }
+  .status.ok { background: var(--ok-soft); color: var(--ok); }
+  .status.wip { background: var(--wip-soft); color: var(--wip); }
+
+  .contact ul { list-style: none; padding: 0; margin: 0; }
+  .contact li { margin-bottom: 6px; }
+
+  footer { border-top: 1px solid var(--line); padding: 24px 0; color: var(--muted); font-size: .9rem; }
+  @media (max-width: 560px) { nav a { margin-left: 12px; } }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <strong>Eduardo Peron</strong>
+    <nav>
+      <a href="#sobre">Sobre</a>
+      <a href="#projetos">Projetos</a>
+      <a href="#competencias">Competências</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+
+    <div class="hero">
+      <h1>Olá, eu sou o Eduardo.</h1>
+      <p class="lead">Estudante de Engenharia da Computação na UNIVAP, com projetos em Java, Python, C# (.NET) e ESP32. Busco estágio em desenvolvimento de software.</p>
+      <div class="btns">
+        <a class="btn primary" href="#projetos">Ver projetos</a>
+        <a class="btn" href="https://github.com/PeronEduardo">GitHub</a>
+        <a class="btn" href="https://www.linkedin.com/in/eduardo-peron-ti">LinkedIn</a>
+      </div>
+    </div>
+
+    <section id="sobre" class="about">
+      <h2>Sobre</h2>
+      <p>Cursando Engenharia da Computação na Universidade do Vale do Paraíba (UNIVAP) desde 2023, em São José dos Campos/SP. Gosto de construir sistemas completos, do banco de dados à interface, e de ver o software interagir com o mundo físico por meio de sensores e microcontroladores.</p>
+      <p class="meta">Projetos acadêmicos em grupo e individuais, com código público no GitHub.</p>
+    </section>
+
+    <section id="projetos">
+      <h2>Projetos</h2>
+      <div class="grid">
+
+        <article class="card">
+          <span class="status ok">Concluído</span>
+          <h3>Robô sumô autônomo (TCC/INIC)</h3>
+          <p>Robô de combate autônomo com chassi próprio, driver de motores TB6612FNG, motores N20 e sensores TCRT5000 (borda do ringue) e HC-SR04 (oponente). Firmware em C++ com ESP-IDF. Orientação do Prof. Hélio.</p>
+          <ul class="tags"><li>ESP32</li><li>C++</li><li>ESP-IDF</li><li>Sensores</li></ul>
+        </article>
+
+        <article class="card">
+          <span class="status wip">Em desenvolvimento</span>
+          <h3>QRMesa – pedidos por QR Code</h3>
+          <p>SaaS multi-restaurante: o cliente escaneia o QR da mesa, faz o pedido no cardápio digital e o pedido chega à cozinha em tempo real e na impressora térmica.</p>
+          <ul class="tags"><li>ASP.NET Core</li><li>PostgreSQL</li><li>SignalR</li><li>Next.js</li><li>TypeScript</li></ul>
+          <div class="foot"><a href="https://github.com/PeronEduardo/qrmesa">Ver código no GitHub →</a></div>
+        </article>
+
+        <article class="card">
+          <span class="status wip">Em desenvolvimento</span>
+          <h3>Alerta de enchentes (IoT)</h3>
+          <p>Estação simulada que mede o nível do rio com ESP32 e HC-SR04, classifica o risco em quatro estados, envia os dados por MQTT/TLS ao ThingsBoard Cloud e aceita comando remoto para a sirene. A rede do bairro é simulada no Cisco Packet Tracer. Projeto em grupo.</p>
+          <ul class="tags"><li>ESP32</li><li>C++</li><li>MQTT</li><li>ThingsBoard</li><li>Packet Tracer</li></ul>
+          <div class="foot"><a href="https://github.com/PeronEduardo/alerta-enchentes-iot">Ver código no GitHub →</a></div>
+        </article>
+
+        <article class="card">
+          <span class="status ok">Concluído</span>
+          <h3>Sistema de gestão para oficina mecânica</h3>
+          <p>Aplicativo desktop com login, cadastro de clientes, veículos e ordens de serviço, relatórios em PDF, exportação JSON/XML e painel de estatísticas. Três bancos de dados: MySQL, MongoDB (auditoria) e SQLite (preferências).</p>
+          <ul class="tags"><li>C#</li><li>.NET MAUI</li><li>MySQL</li><li>MongoDB</li><li>SQLite</li></ul>
+          <div class="foot"><a href="https://github.com/PeronEduardo/OficinaMecanica">Ver código no GitHub →</a></div>
+        </article>
+
+        <article class="card">
+          <span class="status wip">Em desenvolvimento</span>
+          <h3>Analisador espectral de áudio</h3>
+          <p>Lê arquivos WAV (PCM 16 bits), aplica janelamento e uma FFT radix-2 própria e exibe o espectro em gráfico interativo, com histórico de análises salvo em banco. Projeto em dupla, com orientação do Prof. Hélio.</p>
+          <ul class="tags"><li>Python</li><li>Flask</li><li>FFT</li><li>SQLite</li></ul>
+          <div class="foot"><a href="https://github.com/GustavoAlbano01/Projeto-Engenharia-Computacao-1">Ver código no GitHub →</a></div>
+        </article>
+
+        <article class="card">
+          <span class="status wip">Em desenvolvimento</span>
+          <h3>Sistema de priorização de tarefas</h3>
+          <p>Backlog sempre ordenado da tarefa mais crítica para a menos crítica, com inserção por Insertion Sort sobre uma lista sequencial própria (complexidade O(n) por inserção). Interface gráfica em Swing. Projeto em grupo da disciplina de Algoritmos e Estruturas de Dados I.</p>
+          <ul class="tags"><li>Java</li><li>Swing</li><li>Estruturas de dados</li></ul>
+          <div class="foot"><a href="https://github.com/PeronEduardo/projeto-spt-aed1">Ver código no GitHub →</a></div>
+        </article>
+
+      </div>
+    </section>
+
+    <section id="competencias">
+      <h2>Competências</h2>
+      <div class="skills">
+        <div class="box"><h3>Linguagens</h3>
+          <ul class="tags"><li>Java</li><li>Python</li><li>C#</li><li>C/C++</li><li>SQL</li><li>TypeScript</li></ul></div>
+        <div class="box"><h3>Bancos de dados</h3>
+          <ul class="tags"><li>MySQL</li><li>MongoDB</li><li>SQLite</li><li>PostgreSQL</li></ul></div>
+        <div class="box"><h3>IoT e embarcados</h3>
+          <ul class="tags"><li>ESP32</li><li>ESP-IDF</li><li>MQTT</li><li>Wokwi</li><li>Packet Tracer</li></ul></div>
+        <div class="box"><h3>Ferramentas e métodos</h3>
+          <ul class="tags"><li>Git/GitHub</li><li>GitHub Projects</li><li>Scrum</li><li>UML</li><li>Power BI</li></ul></div>
+      </div>
+    </section>
+
+    <section id="contato" class="contact">
+      <h2>Contato</h2>
+      <ul>
+        <li>E-mail: <a href="mailto:EduardoPeron@outlook.com.br">EduardoPeron@outlook.com.br</a></li>
+        <li>LinkedIn: <a href="https://www.linkedin.com/in/eduardo-peron-ti">linkedin.com/in/eduardo-peron-ti</a></li>
+        <li>GitHub: <a href="https://github.com/PeronEduardo">github.com/PeronEduardo</a></li>
+        <li>São José dos Campos/SP</li>
+      </ul>
+    </section>
+
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">© 2026 Eduardo Peron</div>
+</footer>
+
+</body>
+</html>
